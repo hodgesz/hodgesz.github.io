@@ -1,3 +1,187 @@
+/* style.css */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header-content, .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header {
+    background-color: #f0f0f0;
+    padding: 40px 0;
+}
+
+.headshot {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: contain; /* Changed to 'contain' to fix cropping */
+    margin-right: 30px;
+    object-position: top center; /* Ensure focus is on the top part of the image if needed */
+}
+
+.header-text h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+.header-text .title {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.header-text .tagline {
+    font-style: italic;
+    color: #777;
+}
+
+
+.section {
+    padding: 60px 0;
+}
+
+.section h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+    display: inline-block; /* To properly center the pseudo-element underline */
+    width: 100%;
+    text-align: left; /* Reset text-align for h2 itself */
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #007bff; /* Example accent color */
+}
+
+
+.bg-light {
+    background-color: #f9f9f9;
+}
+
+.strengths-list {
+    list-style: none;
+    padding: 0;
+}
+
+.strengths-list li {
+    margin-bottom: 20px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.strengths-list li strong {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+
+.experience-item {
+    margin-bottom: 40px;
+}
+
+.experience-item h3 {
+    font-size: 1.6em;
+    margin-bottom: 5px;
+}
+
+.experience-item .title {
+    color: #555;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.experience-item .date {
+    float: right; /* Align date to the right */
+    color: #777;
+    font-style: italic;
+}
+
+.experience-item p {
+    clear: both; /* Clear float for date */
+}
+
+.experience-item ul {
+    list-style: none; /* Remove default bullet points */
+    padding-left: 20px; /* Add some indentation for the bullet list */
+}
+
+.experience-item ul li {
+    margin-bottom: 8px;
+    padding-left: 20px; /* Indent list items further */
+    position: relative;
+}
+
+.experience-item ul li::before {
+    content: "\2022";  /* Unicode for a bullet point */
+    position: absolute;
+    left: 0;
+    top: 4px;
+    color: #007bff; /* Accent color for bullets */
+}
+
+
+.education-item {
+    margin-bottom: 30px;
+}
+
+.education-item h3 {
+    font-size: 1.4em;
+    margin-bottom: 5px;
+}
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.footer-content {
+    text-align: left; /* Reset text-align for footer content */
+}
+
+
+.footer-content a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+.contact-info p, .social-links p {
+    margin-bottom: 8px;
+}
+
+.social-links a {
+    margin-left: 15px;
+}
+
 /* Professional Development Section Styling */
 .pd-list {
     list-style: none;
@@ -65,4 +249,41 @@
     left: 0;
     top: 4px;
     color: #555; /* Slightly darker color */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+    .header-content, .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .headshot {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .section h2 {
+        text-align: center; /* Center section headings on smaller screens */
+    }
+    .section h2::after {
+        left: 50%; /* Center underline */
+        margin-left: -25px; /* Half of width */
+    }
+    .experience-item .date {
+        float: none; /* Remove float for date on smaller screens */
+        display: block; /* Make date block level */
+        text-align: left; /* Align date to the left */
+        margin-top: 5px; /* Add some space above the date */
+    }
+    .footer-content {
+        text-align: center;
+    }
+    .social-links a {
+        margin-left: 0;
+        margin-right: 15px; /* Keep some spacing between links */
+    }
+
 }
